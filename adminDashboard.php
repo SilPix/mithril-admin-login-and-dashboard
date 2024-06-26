@@ -96,7 +96,7 @@
 
 		<br/>
 
-		<p style="font-style: italics; text-align: center">We really... really hope you're <a>an Admin.</a></p>
+		<p style="font-style: italics; text-align: center">We really... really hope you're <a href="adminLogin.php">an Admin.</a></p>
 	</section>
 
 	<footer style="text-align: center; font-size:29px; font-family: 'Cambria';">

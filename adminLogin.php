@@ -68,7 +68,7 @@
 			<input type="submit" value="Sign-in">
 		</form>
 
-		<p style="font-style: italics; text-align: center">Don't have an account? <a>Sign up</a></p>
+		<p style="font-style: italics; text-align: center">Don't have an account? <a href="sign.php">Sign up</a></p>
 	</section>
 
 	<footer style="text-align: center; font-size:29px; font-family: 'Cambria';">

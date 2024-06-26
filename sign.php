@@ -38,7 +38,7 @@
 			<input type="submit" value="Sign-in">
 		</form>
 
-		<p style="font-style: italics; text-align: center">Already have an account? <a>Sign in</a></p>
+		<p style="font-style: italics; text-align: center">Already have an account? <a href="adminLogin.php">Sign in</a></p>
 	</section> 
 
 	<footer style="text-align: center; font-size:29px; font-family: 'Cambria';">
