@@ -26,7 +26,7 @@
 	</section>
 
 	<footer style="text-align: center; font-size:29px; font-family: 'Cambria';">
-		Copyright &copy; 2024
+		<?php echo "Copyright &copy; 2024"?>
 	</footer>
 </body>
 </html>
