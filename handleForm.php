@@ -19,6 +19,10 @@ try{
 	$sql->bindParam(':phoneNo', $phoneNo);
 	$sql->bindParam(':pw', $pw);
 
+	if($_POST['password'] == "admin"){
+		throw new Exception();
+	}
+
 	$fullname = $_POST['fullname']; 
 	$email = $_POST['email'];
 	$phoneNo = $_POST['phone'];
@@ -32,6 +36,8 @@ try{
 } catch(PDOException $e){
 	echo $sql . "<br/>" . $e->getMessage();
 	$conn = null;
+} catch(Exception $ep){
+	echo "That password is reserved";
 }
 
 ?>
