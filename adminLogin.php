@@ -27,15 +27,38 @@
 			<input type="password" id="password" name="password" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" required><br/>
 
 			<?php
+			$admin_id = "ADR123";
 			$admin_pw = "admin";
+			$adm_check_1 = $adm_check_2 = false;
+
+			if(isset($_POST['unique'])){
+				if($_POST['unique'] == $admin_id){
+					$adm_check_1 = true;
+				}
+				elseif($_POST['unique'] != $admin_id){
+					$adm_check_1 = false;
+					echo "<br/>Error: Not an Administrator's ID <br/>";
+				}
+			}
 
 			if(isset($_POST['password'])){
 				if($_POST['password'] == $admin_pw){
-					header("Location: adminDashboard.php");
+					$adm_check_2 = true;
 				}
 				elseif($_POST['password'] != $admin_pw){
+					$adm_check_2 = false;
 					echo "Error: Not an Administrator's Password";
 				}
+			}
+
+			if($adm_check_1 && $adm_check_2){
+				//Mark user as authorized
+				session_start();
+				$_SESSION['authenticate'] = true;
+
+				//Redirect
+				header("Location: adminDashboard.php");
+				exit;
 			}
 			?>
 

@@ -23,17 +23,22 @@
 	<div></div>
 
 	<section style="padding: 40px; margin: 40px; border: 2px solid black;">
-		<h1 style="font-family: monospace;">Welcome Back, Administrator</h1>
+		<h1 style="font-family: monospace;">
+			<?php 
+			session_start();
+			if(isset($_SESSION['authenticate'])){
+				if($_SESSION['authenticate']){
+					echo "Welcome Back, Administrator";
+				}
+			}
+			else{
+				echo "Error 403: Forbidden";
+			}?>
+		</h1>
 
 		<br/> <br/>
 
 		<table>
-			<tr>
-				<th>Name</th>
-				<th>E-mail</th>
-				<th>Phone Number</th>
-			</tr>
-
 			<?php
 
 			$server = 'localhost';
@@ -49,20 +54,38 @@
 	
 				//Prepare SQL Statements
 				$sql = $conn->prepare("SELECT name, email, phone FROM user_info");
-				$sql->execute();
-			
-				$data = $sql->fetchAll();
-				//$data = $conn->query($sql)->fetchAll(PDO::FETCH_BOTH);
 
-				foreach ($data as $row) {
-					echo "<tr>";
-					echo '<td>' . $row['name'] . '</td>';
-					echo '<td>' . $row['email'] . '</td>';
-					echo '<td>' . $row['phone'] . '</td>';
-					echo "</tr>";
+				//Only run the SQL and fetch the data if the user is authentic
+				if(isset($_SESSION['authenticate']) && $_SESSION['authenticate']){
+					$sql->execute();
+
+					$data = $sql->fetchAll();
+					//$data = $conn->query($sql)->fetchAll(PDO::FETCH_BOTH);
+
+					echo "
+						<tr>
+							<th>Name</th>
+							<th>E-mail</th>
+							<th>Phone Number</th>
+						</tr>
+					";
+
+					foreach ($data as $row) {
+						echo "<tr>";
+						echo '<td>' . $row['name'] . '</td>';
+						echo '<td>' . $row['email'] . '</td>';
+						echo '<td>' . $row['phone'] . '</td>';
+						echo "</tr>";
+					}
+
+					echo "Query Success";
 				}
+				elseif (!isset($_SESSION['authenticate']) || $_SESSION['authenticate'] == false) {
+					echo "<tr><th>You are not allowed to view this page. If you are an admin and are seeing this message, contact IT Support.</th></tr>";
+					echo "Query Failed";
+				}
+				session_destroy();
 
-				echo "Query Success";
 			} catch(PDOException $e){
 				echo $sql . "<br/>" . $e->getMessage();
 				$conn = null;
