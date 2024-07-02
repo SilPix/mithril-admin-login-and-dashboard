@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="style.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<img src="img/anchor.svg" alt="Logo" width="50px" height="50px">
+		<h1>styreo.64</h1>
+
+		<button id="menu-btn" onclick="showMenu()">
+			<img src="img/ham.svg" alt="Menu Button" width="25px" height="25px">
+			<span style="margin: 5px;"></span> Menu
+		</button>
+	</header>
+
+	<div class="menu hidden">
+		<img src="img/x.svg" alt="Close Button" width="50px" height="50px" style="position: absolute; right: 0px; cursor: pointer;" onclick="showMenu()">
+		<br/>
+
+		<div style="margin: 15px 0;">
+			<a href="#">Home</a>
+		</div>
+
+		<hr/>
+
+		<div style="margin: 15px 0;">
+			<a href="#">Contact</a>
+		</div>
+
+		<hr/>
+
+		<div style="margin: 15px 0;">
+			<a href="#">Get Help</a>
+		</div>
+
+		<hr/>
+
+		<div style="margin: 15px 0;">
+			<a href="#">Get a Card</a>
+		</div>
+		
+		<hr/>
+
+		<div style="margin: 15px 0; margin-bottom: 5px;">
+			<a href="#">Log in</a>
+		</div>
+		
+		<br/> <br/>
+		<button>Sign-up</button>
+	</div>
+
+	<br/>
+
+	<section class="cta">
+		<span style="font-size: 30px;">Share the music you love, with the people you love</span>
+		<p style="font-size: 20px; margin: 0px;">...and that's why we're here</p>
+
+		<br/>
+
+		<p>We're the people-first userbase for all things music. Here you can curate playlists of your favorite songs and share them with your favorite people.</p> 
+		<p>We link to <em>every</em> possible platform that your favorite song is available.</p>
+		<button class="cta-btn">Learn more</button>
+	</section>
+
+	<br/>
+
+	<section class="services">
+		<h2>What we offer</h2>
+
+		<div class="categories">
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<span style="margin: 0 7px;"></span>
+						<h3>the trends</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<img src="img/home.svg" alt="Global Transfer" width="50px" height="50px">
+						<span style="margin: 0 7px;"></span>
+						<h3>the chart-toppers</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<img src="img/home.svg" alt="Global Transfer" width="50px" height="50px">
+						<span style="margin: 0 7px;"></span>
+						<h3>the genre-defining</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="services">
+		<h2>Just for you</h2>
+
+		<div class="categories">
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<span style="margin: 0 7px;"></span>
+						<h3>indie rock</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<img src="img/home.svg" alt="Global Transfer" width="50px" height="50px">
+						<span style="margin: 0 7px;"></span>
+						<h3>songs to die to</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+
+			<div class="widget">
+				<div style="width: 100%;" onmouseover="showContent(0)" onmouseleave="hideContent(0)">
+					<div class="widget-title">
+						<img src="img/home.svg" alt="Global Transfer" width="50px" height="50px">
+						<span style="margin: 0 7px;"></span>
+						<h3>math rock</h3>
+					</div>
+				</div>
+
+				<div class="widget-content hidden">
+					<hr/>
+
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<footer>
+		<hr/>
+		<span style="font-size: 18px; font-weight: 800;">&copy; meraki media, 2024</span>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+</html>
