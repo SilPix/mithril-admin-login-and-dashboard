@@ -8,6 +8,7 @@
         { "src": "/login", "dest": "/api/adminLogin.php" },
         { "src": "/dashboard", "dest": "/api/adminDashboard.php" },
         {"src": "/reg", "dest": "/api/registered.php" },
+        {"src": "/test", "dest": "/api/emailTest.php" },
         { "src": "/(.*)",  "dest": "/api/index.php" }
     ]
 }

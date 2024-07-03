@@ -22,7 +22,7 @@
 
 		<br/>
 
-		<p style="font-style: italics; text-align: center">Go to: <a href="adminLogin.php">Services</a></p>
+		<p style="font-style: italics; text-align: center">Go to: <a href="/login">Services</a></p>
 	</section>
 
 	<footer style="text-align: center; font-size:29px; font-family: 'Cambria';">
