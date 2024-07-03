@@ -31,7 +31,19 @@ $email = "e4luckygamer14@gmail.com";
 $hash = "dcg2rj3b3h";
 
 try {
-	$mail->isMail();
+    // Server settings
+    //$mail->setLanguage(CONTACTFORM_LANGUAGE);
+    $mail->SMTPDebug = 2;
+    $mail->isSMTP();
+    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->SMTPAuth = true;
+    $mail->Username = '52bc5350c6a3d7';
+    $mail->Password = '015a7a5486692e';
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 2525;
+
+    // Recipients
+    //$mail->isSendmail();
     $mail->setFrom('moth.aj28@gmail.com', 'Mithril-Registry');
     $mail->addAddress('e4luckygamer14@gmail.com');
 
@@ -46,8 +58,9 @@ try {
     $mail->send();
 
     //Redirect
-	header("Location: registered.php");
+	//header("Location: registered.php");
 } catch (Exception $e) {
     echo "Error occurred while trying to send mail: ".$mail->ErrorInfo;
 }
+
 ?>
