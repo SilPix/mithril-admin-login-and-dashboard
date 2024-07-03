@@ -1,4 +1,22 @@
 <?php
+
+$email = "e4luckygamer14@gmail.com";
+$to = $email;
+$subject = "Mithril | Verify your E-mail";
+$msg = '
+Brief Message
+Or Multi-line message
+';
+
+$header = "From: " . $email . "\r\n" . "Reply-To: " . $email . "\r\n" . "X-Mailer:PHP/" . phpversion();
+mail($to, $subject, $msg, $header);
+
+if(mail($to, $subject, $msg, $header)){
+    echo "Send Success";
+}else{
+    echo "Send Failure";
+}
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
