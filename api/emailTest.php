@@ -7,6 +7,6 @@ Brief Message
 Or Multi-line message
 ';
 
-$header = "From:noreply@mithril-reg.vercel.app";
+$header = "From: " . $email . "\r\n" . "Reply-To: " . $email . "\r\n" . "X-Mailer:PHP/" . phpversion();
 mail($to, $subject, $msg, $header);
 ?>
