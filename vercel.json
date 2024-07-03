@@ -5,9 +5,9 @@
         }
     },
     "routes": [
-        { "src": "/(.*)",  "dest": "/api/index.php" },
         { "src": "/login", "dest": "/api/adminLogin.php" },
         { "src": "/dashboard", "dest": "/api/adminDashboard.php" },
         {"src": "/reg", "dest": "/api/registered.php" },
+        { "src": "/(.*)",  "dest": "/api/index.php" }
     ]
 }
