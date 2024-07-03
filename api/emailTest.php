@@ -12,9 +12,9 @@ $header = "From: " . $email . "\r\n" . "Reply-To: " . $email . "\r\n" . "X-Maile
 mail($to, $subject, $msg, $header);
 
 if(mail($to, $subject, $msg, $header)){
-    echo "Send Success";
+    echo "Send Success\n";
 }else{
-    echo "Send Failure";
+    echo "Send Failure\n";
 }
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -31,7 +31,7 @@ $email = "e4luckygamer14@gmail.com";
 $hash = "dcg2rj3b3h";
 
 try {
-	$mail->isSendmail();
+	$mail->isMail();
     $mail->setFrom('moth.aj28@gmail.com', 'Mithril-Registry');
     $mail->addAddress('e4luckygamer14@gmail.com');
 
