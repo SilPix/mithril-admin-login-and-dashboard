@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body style="font-family: 'Verdana';">
@@ -34,8 +35,11 @@
 
 			<br/> <br/>
 			
+			<!-- reCAPTCHA -->
+			<div class="g-recaptcha" data-sitekey="6LeV7AEqAAAAAOjIdkmARBjbZKxGQ-UG7EMtz5hN"></div>
 
-			<input type="submit" value="Sign-in">
+			<br/>
+			<input type="submit" value="Register">
 		</form>
 
 		<p style="font-style: italics; text-align: center">Already have an account? <a href="adminLogin.php">Sign in</a></p>

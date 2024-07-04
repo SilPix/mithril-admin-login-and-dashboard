@@ -53,7 +53,16 @@
 				$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	
 				//Prepare SQL Statements
-				$sql = $conn->prepare("SELECT name, email, phone FROM user_info");
+				if(isset($_SESSION['admin_id']) && isset($_SESSION['admin_password'])){
+					if($_SESSION['admin_id'] == "ADR123" && $_SESSION['admin_password'] == "admin"){
+						//If it's the Super-Admin, let him see everything
+						$sql = $conn->prepare("SELECT name, email, phone FROM user_info");
+					}else{
+						$sql = $conn->prepare("SELECT name, email, phone FROM user_info WHERE email=:admid AND password=:admpw");
+						$sql->bindParam(":admid", $_SESSION['admin_id']);
+						$sql->bindParam(":admpw", $_SESSION['admin_password']);
+					}
+				}
 
 				//Only run the SQL and fetch the data if the user is authentic
 				if(isset($_SESSION['authenticate']) && $_SESSION['authenticate']){
@@ -90,7 +99,6 @@
 				echo $sql . "<br/>" . $e->getMessage();
 				$conn = null;
 			}
-
 			?>
 		</table>
 
